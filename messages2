@@ -1,0 +1,21 @@
+module Messages_2 where
+
+import qualified Data.Set as Set
+
+import           Ledger
+import           Wallet
+import           Playground.Contract
+
+submitInvalidTxn :: MockWallet ()
+submitInvalidTxn = do
+    logMsg "Preparing to submit an invalid transaction"
+    let tx = Tx
+            { txInputs = Set.empty
+            , txOutputs = []
+            , txForge = 2
+            , txFee = 0
+            , txSignatures = []
+            }
+    submitTxn tx
+
+$(mkFunction 'submitInvalidTxn)
