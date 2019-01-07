@@ -1,0 +1,9 @@
+module Messages_1 where
+
+import           Wallet
+import           Playground.Contract
+
+logAMessage :: MockWallet ()
+logAMessage = logMsg "wallet log"
+
+$(mkFunction 'logAMessage)
