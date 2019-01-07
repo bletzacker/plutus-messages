@@ -1,0 +1,11 @@
+module Messages_3 where
+
+import           Data.Text (Text)
+
+import           Wallet
+import           Playground.Contract
+
+throwWalletAPIError :: Text -> MockWallet ()
+throwWalletAPIError = throwOtherError
+
+$(mkFunction 'throwWalletAPIError)
